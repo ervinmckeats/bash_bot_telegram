@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-botToken="1978269152:AAE9dvq1LcgQvHnIQHNtIHJsM23irPxIe2a";
-channelId="-1011300828251";
-postImage=`sort --random-sort /home/tpp/imgcat/catimg.list | head -n 1`
+botToken="1978269152:AAE9dvq1LcgQvHnIQHNtIHJsM23irPxIe2a";  # id bot telegram
+channelId="-1011300828251"; # id cannel telegram
+postImage=`sort --random-sort /home/tpp/imgcat/catimg.list | head -n 1`  # path
 
-curl -v -F "chat_id=$channelId" -F photo=@$postImage https://api.telegram.org/bot$botToken/sendPhoto
+curl -v -F "chat_id=$channelId" -F photo=@$postImage https://api.telegram.org/bot$botToken/sendPhoto   # source code and API telegram
 
-removeImage=`echo $postImage | cut -d "/" -f 6`;
+removeImage=`echo $postImage | cut -d "/" -f 6`; #remove from the list
 sed -i "/$removeImage/d" /home/tpp/imgcat/catimg.list;
 
-exit 0;
+exit 0; 
