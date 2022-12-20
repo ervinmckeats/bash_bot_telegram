@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+botToken="1978269152:AAE9dvq1LcgQvHnIQHNtIHJsM23irPxIe2a";
+channelId="-1011300828251";
+postImage=`sort --random-sort /home/tpp/imgcat/catimg.list | head -n 1`
+
+curl -v -F "chat_id=$channelId" -F photo=@$postImage https://api.telegram.org/bot$botToken/sendPhoto
+
+removeImage=`echo $postImage | cut -d "/" -f 6`;
+sed -i "/$removeImage/d" /home/tpp/imgcat/catimg.list;
+
+exit 0;
