@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-botToken="1978269152:AAE9dvq1LcgQvHnIQHNtIHJsM23irPxIe2a";  # id bot telegram
-channelId="-1011300828251"; # id cannel telegram
+botToken="BOT TOKEN";  # id bot telegram
+channelId="ID CANNEL TELEGRAM"; # id cannel telegram
 postImage=`sort --random-sort /home/tpp/imgcat/catimg.list | head -n 1`  # path
 
 curl -v -F "chat_id=$channelId" -F photo=@$postImage https://api.telegram.org/bot$botToken/sendPhoto   # source code and API telegram
